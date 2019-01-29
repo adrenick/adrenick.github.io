@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+    
+  </head>
+
+  <body>
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Alexa Drenick</h1>
+        <p>Terrain: An Exploration of Noise</p>
+      </div>
+    </div>
+	<div class="controls">
+		<h1>Controls:</h1>
+		<p>WASD - Camera Movement <br /> Mouse - Camera Rotation <br /> 1 - Classic Perlin Noise <br /> 2 - Simplex Noise <br /> 3 - Animation of 3D Simplex Noise <br /> L - Land <br /> F - Increase Frequency <br /> V - Decrease Frequency <br /> O - Enable Octaves <br /> P - Increase Exponent <br /> M - Decrease Exponent <br /> </p>
+		</div>
+
+	<div class="video">
+		<p>Here's a video of my project, playing around with the different noise modes and also frequency, octave, and exponent controls.</p>
+		<iframe width="840" height="525" src="https://www.youtube.com/embed/xz8w91qjNTw" frameborder="0" allowfullscreen></iframe>
+	</div>
+	<div class="description">
+		<h1>Description:</h1>
+		<p>I started out by adding noise to a sphere representation of a planet to make its surface interesting. First I calculated perlin noise based on the vertex's x and z positions. Then I added that noise factor to the vertex position along the vertex normal. After I completed that, I decided to also implement simplex noise so I could compare the two. After researching, I wanted to play around with frequency, octaves, and an exponential function, so I implemented that and allowed the numbers used to be controlled by the keyboard.</p>
+		<img src="bumpyplanet.png" style="width:840px;height:525px;"> 
+		
+		<p>Next I decided I wanted to be able to land on the planet, so I created a 300 vertex by 300 vertex quad to create terrain with. I followed the same process as before, but using x and y instead of x and z to calculate noise. And since the normal of each vertex was just up in y, the noise factor only got added in the y direction, as intended. I also decided to add in water below a certain height to add interest to the scene.</p>
+		<img src="classic.png" style="width:840px;height:525px;">
+		
+		</div>
+	<div class="sources">
+		<h1>Sources</h1>
+		<p>Perlin Noise: </p><a href="//http://mrl.nyu.edu/~perlin/doc/oscar.html#noise">//http://mrl.nyu.edu/~perlin/doc/oscar.html#noise</a>
+		<p><br />Setting up land terrain: </p><a href="https://blogs.igalia.com/itoral/2016/10/13/opengl-terrain-renderer-rendering-the-terrain-mesh/">https://blogs.igalia.com/itoral/2016/10/13/opengl-terrain-renderer-rendering-the-terrain-mesh/</a>
+		<p><br />Frequency and Octaves affect on terrain: </p><a href="https://www.redblobgames.com/maps/terrain-from-noise/">https://www.redblobgames.com/maps/terrain-from-noise/</a>
+		<p><br />Simplex Noise: </p><a href="//http://www.davidcornette.com/glsl/noise.html">//http://www.davidcornette.com/glsl/noise.html</a>
+
+	</div>
+    
+    
+  </body>
+</html>
